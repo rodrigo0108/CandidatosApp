@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+    {% block body %}
+        {% if candidatos %}
+            <ul>
+            {% for candidato in candidatos %}
+                <li><a href="{% url 'info:detalle' candidato.id %}">{{ candidato.nombres }} {{ candidato.apellidos }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>Lista de candidatos.</p>
+        {% endif %}
+    {% endblock%}
